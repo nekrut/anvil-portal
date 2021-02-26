@@ -76,6 +76,7 @@ module.exports = {
         },
         // `gatsby-plugin-workspace-fields-report`,
         `gatsby-source-studies`,
+        `gatsby-plugin-dashboard-report-anvil-studies`,
         `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,
