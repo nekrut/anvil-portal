@@ -1,0 +1,95 @@
+<script src="https://apis.google.com/js/api.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<script>
+    var googleClientId = "511630731578-s5oh1mqqbsan3ja0rcl0iu447lmt0bac.apps.googleusercontent.com";
+    var url = "https://api.firecloud.org/api/workspaces/anvil-datastorage/AnVIL_CCDG_Baylor_CVD_ARIC/entities";
+
+    var isAuthorized;
+    var currentApiRequest;
+    var token;
+
+    function sendAuthorizedApiRequest(requestDetails) {
+        currentApiRequest = requestDetails;
+        if (isAuthorized) {
+            // Make API request
+            // gapi.client.request(requestDetails)
+
+            // Reset currentApiRequest variable.
+            currentApiRequest = {};
+        } else {
+            GoogleAuth.signIn();
+        }
+    }
+
+    function set_content(isSignedIn) {
+        if (isSignedIn) {
+            document.getElementById("loginstatus").innerHTML = '<a href="#" onclick="signOut();">Sign out</a>';
+            workspaces = document.getElementById("workspaces")
+            if (token != null) {
+                http = new XMLHttpRequest();
+
+                function reqListener() {
+                    console.log('Requesting Terra workspaces');
+                    data = JSON.parse(this.responseText);
+                    data.forEach(item => workspaces.innerHTML += `<div>${item}</div>`);
+                }
+
+                http.addEventListener("load", reqListener);
+                http.open("GET", url);
+                http.setRequestHeader("authorization", `Bearer ${token}`)
+                http.send();
+            }
+        } else {
+            document.getElementById("loginstatus").innerHTML = "";
+            document.getElementById("workspaces").innerHTML = "";
+        }
+    }
+
+    function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+            isAuthorized = true;
+            if (currentApiRequest) {
+                sendAuthorizedApiRequest(currentApiRequest);
+            }
+        } else {
+            isAuthorized = false;
+        }
+        set_content(isSignedIn);
+    }
+
+    (async function () {
+        await new Promise(resolve => gapi.load('auth2', resolve));
+        gapi.auth2.init({
+            clientId: googleClientId
+        }).then(function () {
+            GoogleAuth = gapi.auth2.getAuthInstance();
+            // Listen for sign-in state changes.
+            GoogleAuth.isSignedIn.listen(updateSigninStatus);
+            user = GoogleAuth.currentUser.get();
+            authResponse = user.getAuthResponse(true);
+            token = authResponse != null ? authResponse.access_token : null;
+            set_content(user.isSignedIn());
+            if(! user.isSignedIn()){
+                GoogleAuth.signIn();
+            }
+        });
+    })();
+
+    function signOut() {
+        var auth2 = gapi.auth2.getAuthInstance();
+        auth2.signOut().then(function () {
+            console.log('User signed out.');
+        });
+    }
+
+</script>
+
+<html lang="en">
+<body>
+Hello Terra World
+</body>
+<div className="g-signin2" data-onsuccess="onSignIn"></div>
+<div id="loginstatus"></div>
+<div id="workspaces"></div>
+</html>
