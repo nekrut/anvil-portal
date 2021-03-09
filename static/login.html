@@ -2,13 +2,85 @@
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <script>
-    var googleClientId = "511630731578-s5oh1mqqbsan3ja0rcl0iu447lmt0bac.apps.googleusercontent.com";
-    var url = "https://api.firecloud.org/api/workspaces";
 
+    const NAMESPACE_ANVIL_DATA_STORAGE = "anvil-datastorage";
+    const URL_WORKSPACES = "https://api.firecloud.org/api/workspaces";
+    
+    var googleClientId = "511630731578-s5oh1mqqbsan3ja0rcl0iu447lmt0bac.apps.googleusercontent.com";
 
     var isAuthorized;
     var currentApiRequest;
     var token;
+
+    /**
+     * Execute fetch of data and corresponding callback on receipt of response.
+     */
+    function fetch(url, callback) {
+
+        return new Promise((resolve, reject) => {
+
+            const http = new XMLHttpRequest();
+            http.addEventListener("load", () => {
+                if ( http.status >= 200 && http.status < 300 ) {
+                    const data = JSON.parse(http.responseText);
+                    resolve(callback(data));
+                    return;
+                }
+                reject({ status: http.status, text: http.statusText })
+            });
+            http.open("GET", url);
+            http.setRequestHeader("authorization", `Bearer ${token}`);
+            http.send();
+        });
+    }
+
+    /**
+     * Fetch the sample and participant counts for the set of specified workspaces. Resolves hash of
+     * {workspaceName, participantCount, sampleCount}.
+     */
+    function fetchWorkspaceCounts(workspaceNames) {
+        
+        // test code - to run only two workspaces, uncomment below
+        // workspaceNames = ["AnVIL_CCDG_WashU_CVD_EOCAD_BioMe_WGS", "ANVIL_CMG_Broad_Muscle_Laing_WES"];
+
+        const promises = [];
+        workspaceNames.forEach(workspaceName => {
+
+            const callback = (data) => {
+                return {
+                    workspaceName,
+                    discoveryCount: data.discovery?.count || 0,
+                    familyCount: data.family?.count || 0,
+                    participantCount: data.participant?.count || 0,
+                    sampleCount: data.sample?.count || 0,
+                    subjectCount: data.subject?.count || 0,
+                };
+            };
+            const url = `${URL_WORKSPACES}/${NAMESPACE_ANVIL_DATA_STORAGE}/${workspaceName}/entities`;
+            promises.push(fetch(url, callback));
+        });
+
+        return Promise.all(promises);
+    }
+
+    /**
+     * Fetch set of workspace names in the anvil_datastorage namespace. Resolves array of workspace names.
+     * 
+     */
+    function fetchWorkspaces() {
+        
+        const callback = (data) => {
+            return data
+                .filter(workspaceConfig => {
+                    return workspaceConfig.workspace.namespace === NAMESPACE_ANVIL_DATA_STORAGE;
+                })
+                .map((workspaceConfig) => {
+                    return workspaceConfig.workspace.name;
+                });
+        };
+        
+        return fetch(URL_WORKSPACES, callback);
+    }
 
     function sendAuthorizedApiRequest(requestDetails) {
         currentApiRequest = requestDetails;
@@ -25,21 +97,29 @@
 
     function set_content(isSignedIn) {
         if (isSignedIn) {
-            document.getElementById("loginstatus").innerHTML = '<a href="#" onclick="signOut();">Sign out</a>';
-            workspaces = document.getElementById("workspaces")
+            document.getElementById("loginstatus").innerHTML = `<a href="#" onclick="signOut();">Sign out</a>`;
             if (token != null) {
-                http = new XMLHttpRequest();
-
-                function reqListener() {
-                    console.log('Requesting Terra workspaces');
-                    data = JSON.parse(this.responseText);
-                    data.forEach(item => workspaces.innerHTML += `<div>${item.workspace.namespace} - ${item.workspace.name}</div>`);
-                }
-
-                http.addEventListener("load", reqListener);
-                http.open("GET", url);
-                http.setRequestHeader("authorization", `Bearer ${token}`)
-                http.send();
+                fetchWorkspaces()
+                    .then(fetchWorkspaceCounts)
+                    .then((workspaceCounts) => {
+                        const csvRows =
+                            ["<div>Workspace,Discovery Count,Family Count,Participant Count,Sample Count,Subject Count</div>"];
+                        workspaceCounts.forEach(workspaceCount => {
+                            const csvRow = [
+                                workspaceCount.workspaceName,
+                                workspaceCount.discoveryCount,
+                                workspaceCount.familyCount,
+                                workspaceCount.participantCount,
+                                workspaceCount.sampleCount,
+                                workspaceCount.subjectCount
+                            ];
+                            csvRows.push(`<div>${csvRow.join(",")}</div>`);
+                            
+                        });
+                        const workspacesEl = document.getElementById("workspaces");
+                        workspacesEl.innerHTML += csvRows.join("");
+                    })
+                    .catch(console.error);
             }
         } else {
             document.getElementById("loginstatus").innerHTML = "";
