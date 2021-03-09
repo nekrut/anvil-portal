@@ -3,7 +3,8 @@
 
 <script>
     var googleClientId = "511630731578-s5oh1mqqbsan3ja0rcl0iu447lmt0bac.apps.googleusercontent.com";
-    var url = "https://api.firecloud.org/api/workspaces/anvil-datastorage/AnVIL_CCDG_Baylor_CVD_ARIC/entities";
+    var url = "https://api.firecloud.org/api/workspaces";
+
 
     var isAuthorized;
     var currentApiRequest;
@@ -32,7 +33,7 @@
                 function reqListener() {
                     console.log('Requesting Terra workspaces');
                     data = JSON.parse(this.responseText);
-                    data.forEach(item => workspaces.innerHTML += `<div>${item}</div>`);
+                    data.forEach(item => workspaces.innerHTML += `<div>${item.workspace.namespace} - ${item.workspace.name}</div>`);
                 }
 
                 http.addEventListener("load", reqListener);
