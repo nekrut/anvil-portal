@@ -141,7 +141,7 @@ const buildReport = async function buildReport(url) {
  */
 const getStudyGapAccession = async function getStudyGapAccession(dbGapId) {
 
-    if ( !dbGapId.startsWith("phs") ) {
+    if ( dbGapId && !dbGapId.startsWith("phs") ) {
 
         return "";
     }
