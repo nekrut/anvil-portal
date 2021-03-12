@@ -98,7 +98,19 @@ function buildIngestedDatum(datum, key) {
 
     if ( ALLOW_LIST_WORKSPACE_FIELD_ARRAY.includes(key) ) {
 
-        return value.split(",");
+        return value
+            .split(",")
+            .reduce((acc, val) => {
+
+                const str = val.trim();
+
+                if ( str ) {
+
+                    acc.push(str);
+                }
+
+                return acc;
+            }, []);
     }
 
     if ( ALLOW_LIST_WORKSPACE_FIELD_NUMBER.includes(key) ) {
@@ -223,11 +235,18 @@ async function buildWorkspaces(attributeWorkspaces, countWorkspaces) {
         /* Build the property counts. */
         const countWorkspace = findCountWorkspace(row, countWorkspaces);
 
-        /* Merge properties. */
-        const workspace = {...countWorkspace, ...row, ...propertyStudyAccession, ...propertyAccessType};
+        const keyFileSize = HEADERS_TO_WORKSPACE_KEY[INGESTION_HEADERS_TO_WORKSPACE_KEY.SIZE];
+        const size = countWorkspace[keyFileSize];
 
-        /* Accumulate. */
-        acc.push(workspace);
+        /* Only include workspace if there is a file size. */
+        if ( size && size > 0 ) {
+
+            /* Merge properties. */
+            const workspace = {...countWorkspace, ...row, ...propertyStudyAccession, ...propertyAccessType};
+
+            /* Accumulate. */
+            acc.push(workspace);
+        }
 
         return acc;
     }, Promise.resolve([]));

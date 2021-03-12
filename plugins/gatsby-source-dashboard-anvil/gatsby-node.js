@@ -27,10 +27,10 @@ exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
     const ingestedStudies = await getNCBIStudies(ingestedWorkspaces);
 
     /* Build up the workspaces model. */
-    const workspaces = await getWorkspaces();
+    // const workspaces = await getWorkspaces();
 
     /* Build up the studies model. */
-    const studies = await getStudies(workspaces);
+    // const studies = await getStudies(workspaces);
 
     /* Create node - ingested studies. */
     ingestedStudies.forEach(study => {
@@ -79,90 +79,90 @@ exports.sourceNodes = async ({actions, createNodeId, createContentDigest}) => {
     });
 
     /* Create node - study. */
-    studies.forEach(study => {
-
-        const nodeContent = JSON.stringify(study);
-
-        const nodeMeta = {
-            id: createNodeId(study.studyName),
-            parent: null,
-            children: [],
-            internal: {
-                type: `Study`,
-                mediaType: `application/json`,
-                content: nodeContent,
-                contentDigest: createContentDigest(study),
-            },
-        };
-
-        const node = Object.assign({}, study, nodeMeta);
-
-        createNode(node)
-    });
+    // studies.forEach(study => {
+    //
+    //     const nodeContent = JSON.stringify(study);
+    //
+    //     const nodeMeta = {
+    //         id: createNodeId(study.studyName),
+    //         parent: null,
+    //         children: [],
+    //         internal: {
+    //             type: `Study`,
+    //             mediaType: `application/json`,
+    //             content: nodeContent,
+    //             contentDigest: createContentDigest(study),
+    //         },
+    //     };
+    //
+    //     const node = Object.assign({}, study, nodeMeta);
+    //
+    //     createNode(node)
+    // });
 
     /* Create node - workspace. */
-    workspaces.forEach(workspace => {
-
-        const nodeContent = JSON.stringify(workspace);
-        const workspaceId = `${workspace.consortium}${workspace.projectId}`;
-
-        const nodeMeta = {
-            id: createNodeId(workspaceId),
-            parent: null,
-            children: [],
-            internal: {
-                type: `Workspace`,
-                mediaType: `application/json`,
-                content: nodeContent,
-                contentDigest: createContentDigest(workspace),
-            },
-        };
-
-        const node = Object.assign({}, workspace, nodeMeta);
-
-        createNode(node)
-    });
+    // workspaces.forEach(workspace => {
+    //
+    //     const nodeContent = JSON.stringify(workspace);
+    //     const workspaceId = `${workspace.consortium}${workspace.projectId}`;
+    //
+    //     const nodeMeta = {
+    //         id: createNodeId(workspaceId),
+    //         parent: null,
+    //         children: [],
+    //         internal: {
+    //             type: `Workspace`,
+    //             mediaType: `application/json`,
+    //             content: nodeContent,
+    //             contentDigest: createContentDigest(workspace),
+    //         },
+    //     };
+    //
+    //     const node = Object.assign({}, workspace, nodeMeta);
+    //
+    //     createNode(node)
+    // });
 };
 
 exports.createSchemaCustomization = ({actions}) => {
 
     const {createFieldExtension, createTypes} = actions;
 
-    createFieldExtension({
-        name: "accessType",
-        extend(options, prevFieldConfig) {
-            return {
-                resolve(source, arg, context, info) {
-                    const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getFieldTypeWorkspaceAccessType(source, studies);
-                },
-            }
-        }
-    });
+    // createFieldExtension({
+    //     name: "accessType",
+    //     extend(options, prevFieldConfig) {
+    //         return {
+    //             resolve(source, arg, context, info) {
+    //                 const studies = context.nodeModel.getAllNodes({type: "Study"});
+    //                 return getFieldTypeWorkspaceAccessType(source, studies);
+    //             },
+    //         }
+    //     }
+    // });
 
-    createFieldExtension({
-        name: "diseases",
-        extend(options, prevFieldConfig) {
-            return {
-                resolve(source, arg, context, info) {
-                    const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getFieldTypeWorkspaceDiseases(source, studies);
-                },
-            }
-        }
-    });
+    // createFieldExtension({
+    //     name: "diseases",
+    //     extend(options, prevFieldConfig) {
+    //         return {
+    //             resolve(source, arg, context, info) {
+    //                 const studies = context.nodeModel.getAllNodes({type: "Study"});
+    //                 return getFieldTypeWorkspaceDiseases(source, studies);
+    //             },
+    //         }
+    //     }
+    // });
 
-    createFieldExtension({
-        name: "gapId",
-        extend(options, prevFieldConfig) {
-            return {
-                resolve(source, arg, context, info) {
-                    const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getFieldTypeWorkspaceGapId(source, studies);
-                },
-            }
-        }
-    });
+    // createFieldExtension({
+    //     name: "gapId",
+    //     extend(options, prevFieldConfig) {
+    //         return {
+    //             resolve(source, arg, context, info) {
+    //                 const studies = context.nodeModel.getAllNodes({type: "Study"});
+    //                 return getFieldTypeWorkspaceGapId(source, studies);
+    //             },
+    //         }
+    //     }
+    // });
 
     createFieldExtension({
         name: "iGapId",
@@ -188,17 +188,17 @@ exports.createSchemaCustomization = ({actions}) => {
         }
     });
 
-    createFieldExtension({
-        name: "studyName",
-        extend(options, prevFieldConfig) {
-            return {
-                resolve(source, arg, context, info) {
-                    const studies = context.nodeModel.getAllNodes({type: "Study"});
-                    return getFieldTypeWorkspaceStudyName(source, studies);
-                },
-            }
-        }
-    });
+    // createFieldExtension({
+    //     name: "studyName",
+    //     extend(options, prevFieldConfig) {
+    //         return {
+    //             resolve(source, arg, context, info) {
+    //                 const studies = context.nodeModel.getAllNodes({type: "Study"});
+    //                 return getFieldTypeWorkspaceStudyName(source, studies);
+    //             },
+    //         }
+    //     }
+    // });
 
     createTypes(`
     type Consents implements Node {
