@@ -52,7 +52,7 @@ const generateAnVILIngestedDashboardIndex = function generateAnVILIngestedDashbo
             const dbGapId = workspace.dbGapId;
             const dbGapIdAccession = workspace.dbGapIdAccession;
             const dbGapIdNumber = getIndexFieldGapNumber(workspace.dbGapId);
-            const diseases = getIndexFieldDiseases(workspace.diseases, workspace.consortium);
+            const diseases = getIndexFieldDiseases(workspace.diseases);
             const studyName = getIndexFieldStudyName(study.studyName);
             const workspaceName = getIndexFieldWorkspaceName(workspace.projectId);
 
