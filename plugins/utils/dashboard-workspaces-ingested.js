@@ -16,7 +16,7 @@ const {getStudyGapAccession} = require(path.resolve(__dirname, "./dashboard-xml.
 // Template variables
 const ALLOW_LIST_WORKSPACE_FIELD_ARRAY = ["consentShortNames", "dataTypes", "diseases"];
 const ALLOW_LIST_WORKSPACE_FIELD_NUMBER = ["size", "samples", "subjects"];
-const DENY_LIST_TERMS = ["N/A", "NA", "", null];
+const DENY_LIST_TERMS = ["AttributeValue", "N/A", "NA", "", null];
 const fileAnVILDataIngestion = "anvil-data-ingestion-attributes.tsv";
 const fileTerraDataIngestion = "terra-data-ingestion-attributes.tsv";
 const WORKSPACE_ACCESS_TYPE_DISPLAY_VALUE = {
