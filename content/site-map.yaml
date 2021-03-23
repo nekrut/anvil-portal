@@ -158,16 +158,21 @@
   pageTitle: "Learn"
   pathPartial: "/learn"
   tabs:
-    - name: "Researchers"
+    - name: "Introduction"
       pathPartial: ""
       navigationItems:
         - name: "Getting Started"
+          file: "/learn/learn"
+          pathOverride: "/learn"
+        - name: "Account Setup"
+          file: "/learn/account-setup/account-setup"
+          pathOverride: "/learn/account-setup"
+        - name: "Tutorials"
           file: ""
           pathPartial: "/getting-started"
           navigationItems:
             - name: "Getting Started with AnVIL"
               file: "/learn/getting-started/getting-started-with-anvil"
-              pathOverride: "/learn"
             - name: "Getting Started with Gen3"
               file: "/learn/getting-started/getting-started-with-gen3"
             - name: "Using Example Workspaces"
@@ -225,7 +230,7 @@
               file: "/learn/reference/gtex-v8-free-egress-instructions"
             - name: "Cross Platform Data Access with GA4GH DRS in Terra"
               file: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
-    - name: "PIs"
+    - name: "Principal Investigators"
       pathPartial: "/for-pis"
       navigationItems:
         - name: "Setting up Lab Accounts"
