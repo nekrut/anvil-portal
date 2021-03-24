@@ -75,8 +75,8 @@ module.exports = {
             }
         },
         // `gatsby-plugin-workspace-fields-report`,
-        `gatsby-source-dashboard-anvil`,
-        `gatsby-source-dashboard-ncpi`,
+        // `gatsby-source-dashboard-anvil`,
+        // `gatsby-source-dashboard-ncpi`,
         `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,

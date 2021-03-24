@@ -16,7 +16,7 @@ import Events from "../events/events";
 import News from "../news/news";
 import SectionBody from "../section/section-body";
 import SectionIntro from "../section/section-intro";
-import Stats from "../stats/stats";
+// import Stats from "../stats/stats";
 import TwitterTimeline from "../twitter-timeline/twitter-timeline";
 import Workspaces from "../workspaces/workspaces";
 
@@ -67,7 +67,7 @@ class Home extends React.Component {
                             </Link>
                         </div>
                     </div>
-                    <Stats/>
+                    {/*<Stats/>*/}
                     <div className={compStyles.statsCaption}>
                         <Link to="/data" className={globalStyles.asLink}>Explore AnVIL's datasets and learn how to request access.</Link>
                     </div>

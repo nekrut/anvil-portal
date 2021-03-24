@@ -3,6 +3,21 @@ title: "Getting Started with AnVIL"
 author: "AnVIL"
 description: "Guides helping users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis."
 ---
+AnVIL is a cloud-based platform that allows researchers to analyze high-value genomic datasets with popular genomics analysis tools in a secure cloud computing environment.
+
+AnVIL provides researchers with access to petabytes of genomic data from hundreds of thousands of samples and subjects and enables researchers
+
+## Quickstart Guides
+These Quick Start guides will help new AnVIL users get started as quickly as possible.
+We’ve made sensible recommendations that will fit many (but not all)
+situations, and have included notes and links for users
+with more specialized situations.
+
+### For PIs
+
+- [Set Up Lab Accounts](/learn/for-pis/setting-up-lab-accounts) - Follow these instructions to get your accounts, set up billing, and set up your team members to do research with AnVIL.
+
+- [Budget Templates](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc) - Templates for calculating a budget and writing a budget justification for using AnVIL in your grant applications.
 
 
 ## Billing
