@@ -4,8 +4,21 @@ author: "AnVIL"
 description: ""
 ---
 
-
 # Account Setup
+To use AnVIL you will need a Google account for authenticating with Terra 
+and Gen3. If you will be accessing restricted access data, you will also need 
+an eRA commons id. 
+
+You will need to link your Terra account with your eRA commons ID and your 
+Gen3 account. 
+
+Finally, to run analyses you will either need to configure your own Google 
+Cloud Billing Account and Link it to Terra or obtain "Can Execute" access to 
+a workspace linked to a collaborator's Terra Billing Project and Google 
+Billing Account.   
+
+
+## Account Setup Checklist
 
 - [Set up a Terra account](https://support.terra.bio/hc/en-us/articles/360028235911-How-to-register-for-a-Terra-account) - To register for a [Terra](https://anvil.terra.bio/#workspaces) account, you will need a Gmail account or another email account (an institutional email, for example) associated with a Google identity.
 

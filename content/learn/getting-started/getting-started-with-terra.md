@@ -3,26 +3,8 @@ title: "Getting Started with AnVIL"
 author: "AnVIL"
 description: "Guides helping users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis."
 ---
-AnVIL is a cloud-based platform that allows researchers to analyze high-value genomic datasets with popular genomics analysis tools in a secure cloud computing environment.
 
-AnVIL provides researchers with access to petabytes of genomic data from hundreds of thousands of samples and subjects and enables researchers
-
-## Quickstart Guides
-These Quick Start guides will help new AnVIL users get started as quickly as possible.
-We’ve made sensible recommendations that will fit many (but not all)
-situations, and have included notes and links for users
-with more specialized situations.
-
-### For PIs
-
-- [Set Up Lab Accounts](/learn/for-pis/setting-up-lab-accounts) - Follow these instructions to get your accounts, set up billing, and set up your team members to do research with AnVIL.
-
-- [Budget Templates](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc) - Templates for calculating a budget and writing a budget justification for using AnVIL in your grant applications.
-
-
-## Billing
-
-- [Controlling cloud costs](https://support.terra.bio/hc/en-us/sections/360006459511-Controlling-Cloud-costs) - Understand the costs of using key cloud services (Google Cloud Storage, Google Computer Engine, and Google BigQuery). Examples are provided to help you make informed decisions around controlling costs on Terra.
+Terra is AnVILs compute platform. Terra provides..
 
 
 ## Using Terra Workspaces
@@ -35,13 +17,6 @@ with more specialized situations.
 - [Understanding workspace access levels](https://support.terra.bio/hc/en-us/articles/360025851892-Reader-writer-or-owner-Workspace-access-controls-explained) - Terra workspaces have three access levels: READER, WRITER, and OWNER. Each access level represents an expanded set of permissions.
 
 - [Exploring curated example workspaces](https://support.terra.bio/hc/en-us/articles/360028967111-Start-with-curated-sample-workspaces-for-a-variety-of-use-cases) - One of the best ways to get started in AnVIL is to explore curated example workspaces. These are curated workspace templates that span a variety of use cases.  Standardized for completeness and ease of use, they're great as templates or introductions to help reproduce instructive results and learn established methodologies. Also see AnVIL's [featured example workspaces](/learn/getting-started/using-example-workspaces).
-
-## Finding and Accessing Datasets
-- [Discovering datasets](/data) - Datasets of interest can be discovered in [AnVIL’s dataset catalog](/data), the [Gen3 Data Explorer](https://gen3.theanvil.io/) and by reviewing data-focused workspaces available to you once you are logged into Terra.
-
-- [Requesting dataset access](/learn/accessing-data/requesting-data-access) - AnVIL's open access datasets are accessible to all upon logging into [Terra](https://anvil.terra.bio/#workspaces)  or [Gen3](https://gen3.theanvil.io). To request access for datasets with access restrictions, see AnVIL's guides for requesting access to [Controlled Access](#accessing-controlled-access-data) and [Consortium Access](#accessing-consortium-access-data) datasets. 
-
-- [Once your access is approved](/learn/accessing-data/requesting-data-access#once-your-access-is-granted) - the workspaces associated with your new datasets will be listed on your Terra workspaces tab.  [Clone](https://support.terra.bio/hc/en-us/articles/360026130851-How-to-clone-a-workspace) the workspace to begin working with the dataset.
 
 ## Running Analyses
 
