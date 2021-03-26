@@ -5,17 +5,19 @@ description: ""
 ---
 
 # Account Setup
-To use AnVIL you will need a Google account for authenticating with Terra 
-and Gen3. If you will be accessing restricted access data, you will also need 
-an eRA commons id. 
+To use AnVIL, you will need a Google account for authenticating with Terra
+and Gen3 and to associate your Terra account with a Google Cloud Platform (GCP) account.
 
-You will need to link your Terra account with your eRA commons ID and your 
-Gen3 account. 
+If you will be accessing controlled-access data, you will also need
+an eRA commons id.
 
-Finally, to run analyses you will either need to configure your own Google 
-Cloud Billing Account and Link it to Terra or obtain "Can Execute" access to 
-a workspace linked to a collaborator's Terra Billing Project and Google 
-Billing Account.   
+To enable dbGaP data use authorizations to flow through from dbGaP to Terra, you will need to link your Terra account with your eRA commons ID and your
+Gen3 account.
+
+Finally, to run analyses you will either need to configure your own Google
+Cloud Billing Account and Link it to Terra or obtain "Can Execute" access to
+a workspace linked to a collaborator's Terra Billing Project and Google
+Billing Account.
 
 
 ## Account Setup Checklist
@@ -28,6 +30,7 @@ Billing Account.
 
 - [Link your Gen3 and Terra accounts](https://support.terra.bio/hc/en-us/articles/360050390451) - Follow these step-by-step instructions to link your Gen3 credentials to your Terra account. This allows you to analyze Gen3 data on Terra.
 
-- [Link your Terra and eRA Commons ID](https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers) - To use controlled-access data on Terra, you will need to link your Terra user ID to your authorization account (such as a dbGaP account). Linking to external servers will allow Terra to automatically determine if you can access controlled datasets hosted in Terra (ex. TCGA, TOPMed, etc.) based on your approved dbGaP applications. 
+- [Link your Terra and eRA Commons ID](https://support.terra.bio/hc/en-us/articles/360038086332-Linking-Terra-to-External-Servers) - To use controlled-access data on Terra, you will need to link your Terra user ID to your authorization account (such as a dbGaP account). Linking to external servers will allow Terra to automatically determine if you can access controlled datasets hosted in Terra (ex. TCGA, TOPMed, etc.) based on your approved dbGaP applications.
 
 - [Link your Terra identity with Google Billing](https://support.terra.bio/hc/en-us/articles/360026182251-How-to-set-up-billing-projects-and-Google-Billing-Accounts) - The Terra platform is free to use; you can browse showcase workspaces and the Data Library as soon as you register for an account. However operations in Terra - such as running workflows, running Jupyter Notebooks, and accessing and storing data - may incur Google Cloud Platform charges. These charges are billed by GCP and paid through your Terra billing account.
+

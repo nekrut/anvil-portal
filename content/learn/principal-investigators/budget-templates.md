@@ -22,7 +22,7 @@ Cost for storage is driven by the amount of data you store, and the length of ti
 For more information and current pricing see [Google Cloud Storage Pricing](https://cloud.google.com/storage/pricing#storage-pricing) 
 and [Google Cloud Local SSD Pricing](https://cloud.google.com/compute/all-pricing#localssdpricing).
 
-### Network Usage (Ingress)
+### Network Usage (Egress)
 Egress applies to data being transferred out of a Cloud resource. In this context, a Cloud resource
 refers to a set of computers in a particular region. This would apply, for example, if you transferred data from Google’s East Coast computers to Amazon’s West Coast computers.
 

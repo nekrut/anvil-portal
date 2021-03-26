@@ -1,4 +1,4 @@
-import {useStaticQuery, graphql} from 'gatsby';
+//import {useStaticQuery, graphql} from 'gatsby';
 
 // export const DashboardWorkspaceStaticQuery = () => {
 //     const {allWorkspace} = useStaticQuery(
@@ -29,4 +29,4 @@ import {useStaticQuery, graphql} from 'gatsby';
 //     `
 //     );
 //     return allWorkspace.edges.map(n => n.node);
-};
+//};

@@ -168,6 +168,8 @@
           file: "/learn/account-setup/account-setup"
         - name: "Understanding Billing"
           file: "/learn/understanding-billing/understanding-billing"
+#        - name: "Understanding Workspaces"
+#          file: "/learn/understanding-workspaces/understanding-workspaces"
         - name: "Getting Started"
           file: ""
           pathPartial: "/getting-started"
@@ -232,11 +234,11 @@
               file: "/learn/reference/gtex-v8-free-egress-instructions"
             - name: "Cross Platform Data Access with GA4GH DRS in Terra"
               file: "/learn/reference/cross-platform-data-access-with-drs-uris-in-terra"
-    - name: "Data Analysts"
-      pathPartial: "/data-analysts"
-      navigationItems:
-        - name: "Analyzing Data"
-          file: "/learn/data-analysts/data-analysts"
+#    - name: "Data Analysts"
+#      pathPartial: "/data-analysts"
+#      navigationItems:
+#        - name: "Analyzing Data"
+#          file: "/learn/data-analysts/data-analysts"
     - name: "Principal Investigators"
       pathPartial: "/principal-investigators"
       navigationItems:
@@ -254,11 +256,11 @@
         - name: "Data Transfer into AnVIL"
           draft: "true"
           file: "/learn/consortia/data-transfer-into-anvil"
-    - name: "Developers"
-      pathPartial: "/developers"
-      navigationItems:
-        - name: "Developing"
-          file: "/learn/developers/developers"
+#    - name: "Developers"
+#      pathPartial: "/developers"
+#      navigationItems:
+#        - name: "Developing"
+#          file: "/learn/developers/developers"
 ## Overview
 - menuItem: "Overview"
   pageTitle: "Overview"
