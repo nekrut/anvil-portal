@@ -18,10 +18,11 @@ managers over convenience of data analysts.
 
 ## Goals of this guide
 * Provide a conceptual overview of setting up a Lab Billing in AnVIL.
-* Teach key billing concepts and their relationships to each other. 
+* Teach key billing concepts and their relationships to each other.
 * Provide step-by-step instructions to help you set up your lab in a manner 
   that emphasizes cost control, facilitates cost assignment and provides and 
   transparency in accounting.
+* Capture the $300 Google getting started credits.
 
 
 ## Billing Overview
@@ -92,7 +93,7 @@ This guide assumes the following roles and permissions:
    terra.bio/hc/en-us/articles/360029186611-Setting-up-a-Google-account-with
    -a-non-Google-email).
 1. Create a Terra account with the email address associated with the Google 
-Account.
+Account. https://support.google.com/accounts/answer/27441
 1. Identify how many GCP Payment Accounts will need to be created - One per 
    funding source is the recommended approach in this guide.
 1. Identify or create the Payment Methods to be used for each GCP Billing 

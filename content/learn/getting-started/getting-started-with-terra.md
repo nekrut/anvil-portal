@@ -4,7 +4,7 @@ author: "AnVIL"
 description: "Guides helping users navigate their way through creating an account, linking billing credentials, interacting with Workspaces, and performing analysis."
 ---
 
-Terra is AnVILs compute platform. Terra provides..
+
 
 
 ## Using Terra Workspaces
