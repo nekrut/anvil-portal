@@ -4,7 +4,7 @@ author: "AnVIL"
 description: "An overview of how cloud billing for Terra in AnVIL."
 ---
 
-# Understanding Billing
+# Understanding Cloud Costs
 
 AnVIL and all of its components are free to use. Terra is AnVIL's analysis
 platform and runs the Google Clout Platform (GCP).
@@ -35,3 +35,6 @@ refers to a set of computers in a particular region. This would apply, for examp
 In general, while it’s free to upload data to the Cloud, you will incur costs when downloading data to your local computer or between Cloud regions.
 For more information see [Google Cloud Network Pricing](https://cloud.google.
 com/storage/pricing#network-egress).
+
+
+>
