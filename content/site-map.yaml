@@ -164,6 +164,8 @@
         - name: "Learning AnVIL"
           file: "/learn/learn"
           pathOverride: "/learn"
+        - name: "Guides and Tutorials"
+          file: "/learn/guides-and-tutorials/guides-and-tutorials"
         - name: "Account Setup"
           file: "/learn/account-setup/account-setup"
         - name: "Billing Setup"
@@ -172,7 +174,7 @@
           file: "/learn/understanding-workspaces/understanding-workspaces"
         - name: "Understanding Cloud Costs"
           file: "/learn/understanding-cloud-costs/understanding-cloud-costs"
-        - name: "Getting Started Guides"
+        - name: "Running Analyses"
           file: ""
           pathPartial: "/getting-started"
           navigationItems:

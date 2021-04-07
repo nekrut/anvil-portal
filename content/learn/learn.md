@@ -9,55 +9,152 @@ started content."
 
   <!--- Add links! --->
 
-The AnVIL platform is an [NHGRI](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) supported data commons running on the Google Cloud Platform (GCP). AnVIL enables researchers to analyze high-value genomic datasets with popular analysis tools in a secure cloud computing environment.
+The AnVIL platform is an [NHGRI](https://www.genome.gov/Funded-Programs-Projects/Computational-Genomics-and-Data-Science-Program/Genomic-Analysis-Visualization-Informatics-Lab-space-AnVIL) supported data commons running on the Google Cloud Platform (GCP). AnVIL enables researchers to analyze high-value open and controlled access genomic [datasets](/data) with popular analysis tools in a [secure](/overview/security) cloud computing environment.
 
-AnVIL uses [Terra](/learn/videos/terra-videos) as its analysis platform, [Gen3](/learn/getting-started/getting-started-with-gen3) for data search and artificial cohort creation, and [Dockstore](/learn/videos/dockstore-videos) as a repository for Docker-based genomic analysis tools and workflows.
+AnVIL uses [Terra](https://anvil.terra.bio/#workspaces) as its analysis platform, [Gen3](https://gen3.theanvil.io) for data search and artificial cohort creation, and [Dockstore](https://dockstore.org/) as a repository for Docker-based genomic analysis tools and workflows.
 
-In addition to Docker-based batch execution analysis tools,  AnVIL supports popular interactive analysis tools such as Jupyter notebooks, Bioconductor, RStudio, and [Galaxy](/learn/getting-started/getting-started-with-galaxy).
+In addition to Docker-based analysis workflows,  AnVIL supports popular interactive analysis tools such as Jupyter notebooks, Bioconductor, RStudio, and [Galaxy](https://galaxyproject.org/).
 
 By operating in the cloud, AnVIL users can scale analyses from a single computer to thousands of cores and securely share data, workflows, and reproducible results with collaborators and colleagues.
 
 ### About AnVIL’s Documentation
-AnVIL’s training materials curate, organize, and augment existing component and tool documentation and provide original information about how to use the AnVIL platform’s parts together to accomplish the goals of AnVIL’s different user personas.
+AnVIL’s training materials curate, organize, and augment existing component and tool documentation, and show how to use AnVIL’s parts together to accomplish the goals of AnVIL’s different user personas.
 
-The AnVIL team is in the process of persona-specific guides and  tutorials for Data Analysts, [Principal Investigators](/learn/principal-investigators/setting-up-lab-accounts), Developers, Instructors, and [Data Contributors](/learn/consortia/data-submission).
+The AnVIL team is in the process of developing persona-specific guides and tutorials for data analysts, [principal investigators](/learn/principal-investigators/setting-up-lab-accounts), developers, instructors, and [data contributors](/learn/consortia/data-submission).
 
-For example,  Principal Investigators can see  [Setting Up Lab Accounts](/learn/for-pis/setting-up-lab-accounts) for information on how to set up lab members and lab billing accounts in Google Billing and Terra and the [Budget Templates Guide](https://docs.google.com/document/d/1HX4-3F-bLCwld_qsxOPd1OSHV403C0cYgVnT8tnpPJc) for instructions on calculating a budget and writing a budget justification for using AnVIL in grant applications.
-
-
-
-
+<hero>  For a full list of AnVIL guides and tutorials for each persona, see [Guides and Tutorials](/learn/guides-and-tutorials). </hero>
 
   <!--- Add FAIR, add interoperability with other data commons, increased accessibility to complex data center--->
 
 ## Getting Started
 
+This guide provides an overview of AnVIL, focusing on onboarding and preparing new users to run genomic analyses in the cloud.
+
+This guide walks you through:
+
+1. Setting up and linking user accounts.
+1. Obtaining access to controlled-access data.
+1. Managing billing for cloud compute costs.
+
 ### Account Setup
 
-Anyone with a Google account can register with Terra and view Terra’s publicly accessible workspaces, [1000 Genomes High-Coverage](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019), for example.
+All you need is a Google account to register with Terra and browse AnVIL’s publicly accessible workspaces.
 
-Likewise, anyone with a Google account can register with Gen3 and view publicly accessible datasets or register with Dockstore and browse tools and workflows.
+Likewise, with a Google account, you  can register with Gen3 and browse publicly accessible datasets or register with Dockstore and browse tools and workflows.
 
-To access controlled access datasets in Gen3 or Terra, you must link eRA Commons ID to both Terra and Gen3, and link your Terra and Gen3 accounts to each other.  For instructions on setting up accounts in Google, Terra, Gen3, and linking them together see  [Account Setup](/learn/account-setup).
+To send artificial cohorts from Gen3 to Terra, you will need to link your Gen3 and Terra accounts.
 
-### About Terra Workspaces
-
-Analysis in Terra is centered around the “workspace”. Terra workspaces typically hold genomic data along with subject-level phenotypic data and are configured with analysis tools such as notebooks and Docker images. Workspaces also hold the output or derived data generated by analyses.
-
-Workspace configuration also controls who can view, clone, launch, or share a workspace and whose Google Billing Account is charged for any GCP cloud compute costs incurred by workspace. For additional informaton about Terra workspaces see [Understanding Workspaces](/learn/understanding-workspaces).
+To allow your dbGaP data request approvals to flow through to Terra and Gen3,  you will need to link your eRA commons ID with both platforms.
 
 
+<hero> For instructions on setting up accounts in Google, Terra, Gen3, and linking them together see  [Account Setup](/learn/account-setup).</hero>
+
+### Discovering and Accessing Data
+
+AnVIL holds genomic data for hundreds of thousands of study participants. Much of this data is controlled-access.
+
+To obtain access to controlled-access data sets, you must either be a member of a data-generating consortia with a data-sharing agreement among consortia members or have been granted access to a study through the dbGapP Data Access Request process.
 
 
-### About Cloud Costs
+Once you are have been granted access, and assuming you have linked your eRA commons ID with Terra and Gen3, you will be able to see your new studies in Gen3 and new data oriented workspaces in Terra.
 
-AnVIL and all of its components are free to use. Certain activities, however, such as creating or cloning a workspace,  downloading data, or running an analysis, may incur costs on behalf of the workspace owner for any CGP compute, storage, or egress utilized. For additional information on understanding and controlling cloud costs see [Understanding Cloud Costs](/learn/understanding-cloud-costs).
+AnVIL’s open access datasets such as [1000 Genomes High Coverage 2019](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019) can be accessed in Terra or Gen3 immediately after account creation.
+
+For a detailed listing of available datasets searchable by disease, data type, consent type and consortia, see AnVIL’s  [Dataset Catalog](/data).
+
+<hero> For instructions on requesting data access see [Requesting Data Access](/learn/accessing-data/requesting-data-access) and [Discovering Data](learn/accessing-data/discovering-data).</hero>
+
+### Understanding Cloud Compute Costs and Billing
+
+There are several concepts that need to be understood in order to configure billing and effectively manage cloud compute costs in AnVIL. They are:
+
+1. Cloud Compute Fees and Pricing
+1. Terra Workspaces
+1. Terra Billing Projects
+1. GCP Billing Accounts and related resources
+
+
+#### Cloud Compute Costs
+
+AnVIL runs on the Google Cloud Platform (GCP). AnVIL and all of its components are free to use, however, certain activities, such as running an analysis, or storing, or downloading data may incur Google Cloud Platform (GCP) fees.
+
+In Terra cloud compute fees are passed through, without markup, to a GCP Billing Account. The fees are settled using the GCP Billing Account’s configured payment method.
+
+See [Understanding Cloud Compute Costs](/learn/understanding-cloud-costs) for more detailed information on what activities cause fees and pricing.
+
+#### Terra Workspaces
+
+Performing genomic analysis in Terra is centered around the concept of a workspace.
+
+Terra workspaces typically hold genomic data along subject-level phenotypic data and are configured with analysis tools such as notebooks and Docker images. Workspaces also hold the output generated by running an analysis.
+
+Workspace configuration controls who can view, clone, launch, or share a workspace and whose Terra Billing Project is charged for any GCP cloud compute costs incurred by workspace.
+
+Workspaces have an associated Google storage bucket usually configured as  “Requester Pays” meaning that users requesting downloads from the bucket must pay cloud egress fees for the data transfer.
+
+
+
+
+
+<hero> For additional information about Terra workspaces see [Understanding Workspaces](/learn/understanding-workspaces). </hero>
+
+
+#### Managing Cloud Cost Billing
+
+AnVIL and all of its components are free to use, however, certain activities, such as running an analysis, or storing, or downloading data may incur Google Cloud Platform (GCP) fees.
+
+In Terra, a Terra Billing Project passes through any cloud compute fees, without markup, to a GCP Billing Account where the fees are settled using the GCP Billing Account’s payment method. Terra Billing Projects are always linked to a single GCP Billing Account.
+
+
+All activities that can incur GCP fees are associated with a Terra Billing Project either explicitly by requiring
+
+
+Before you can perform an activity that incurs cloud costs you must be either a “member” or “owner” of a Terra Billing Project or have “Write + Can Compute” access to a Terra workspace.
+
+
+When the Terra Billing Project is created it is associated with a GCP Billing Project. Any GCP fees associated with the Terra Billing Project are passed through, without markup to its associated GCP Billing Account.
+
+Individual users may be members or owners of a Terra Billing Project
+
+To download or view a workspaces files, you first select a Terra Billing Project they wish to use when they download or view data files. Similarly when a user creates or clones a workspace they .
+
+When workspaces are launched, the Terra Billing Project they were created with is charged for any cloud costs incurred.
+
+
+
+
+G
+
+GCP fees may be incurred by:
+
+1. Users when they download or view data or notebooks from a workspace’s “Requestor Pays” bucket.
+
+
+1. Workspaces when they are launched.
+
+GCP fees are passed through, without markup, to the GCP Billing Account associated with the workspace incurring the charges.
+
+
+
+
+
+
+### Workspaces and Billing
+
+When workspaces are created
+
+You can incur cloud costs by creating or cloning a workspace, uploading data to your workspace, downloading data from your workspace or running an analysis which will consume compute resources and may also store analysis output back in the workspace.
+
+If you share a workspace that you created and give the new user Write+Can Compute permissions, they will be able to run the workspace
+
+For additional information on understanding and controlling cloud costs, see [Understanding Cloud Costs](/learn/understanding-cloud-costs).
 
 
 ### Billing Setup
 
+To view workspace files, or to
 
-To run analysis on Terra you must either:
+To run analysis on Terra you must either have access to
 
 1. Have “Write, Can-Execute” permissions on a workspace created by a collaborator. Any charges incurred by launching the workspaces flow through to the Google Billing Account associated with the Terra Billing Project your collaborator associated with the workspace.
 
@@ -95,16 +192,6 @@ To create or clone a workspace you must be associated with a Terra Billing Proje
 To obtain access to a Terra Billing Project you will need to either set one up yourself or be added to one by your lab manager or principal investigator.
 
 https://support.terra.bio/hc/en-us/articles/360025851892-Reader-writer-or-owner-Workspace-access-controls-explained
-### Discovering and Accessing Data
-
-AnVIL holds genomic data for hundreds of thousands of study participants. Much of this data is controlled access. To obtain access, you must either be a member of a data generating consortia that has a data-sharing agreement among consortia members or have been granted access through the dbGapP Data Access Request process.
-
-
-A full listing of AnVIL’s datasets searchable by disease, data type, and consent type on our [Dataset Catalog](/data).
-
-Cohorts created in Gen3 can be exported to Terra workspaces for analysis. Additionally, Terra data-centric workspaces can be cloned in Terra and then used in an analysis.
-
-See [Requesting Data Access](/learn/accessing-data/requesting-data-access) and [Discovering Data](learn/accessing-data/discovering-data) for more information.
 
 
   <!--- 

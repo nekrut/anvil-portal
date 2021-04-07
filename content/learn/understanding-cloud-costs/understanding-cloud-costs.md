@@ -17,6 +17,11 @@ running Jupyter Notebooks, and accessing and storing data - may incur Google Clo
 These charges are billed by GCP and paid through your Google Cloud Platform 
 payment method. For more information see [Controlling cloud costs](https://support.terra.bio/hc/en-us/sections/360006459511-Controlling-Cloud-costs).
 
+
+Cloud environment persistent disks
+Storage ihe workspace bucket.
+Fees for unning notebooks or workflows.
+
 ## Types of GCP Charges
 
 ### Compute
