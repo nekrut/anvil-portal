@@ -6,45 +6,66 @@ description: "An overview of best practices for account setup in AnVIL to effect
 
 # Preparing a Cloud Cost Budget Justification
 
-This document is a Quick Start Guide for creating a budget justification paragraph for a grant proposal. 
+This document walks you through creating a budget justification paragraph for a grant proposal.
 
-## Understanding Types of Costs
+## Understanding GCP Fees  
 
-### Compute
-Cost for Computing is driven by your particular CPU and memory requirements. Importantly, you can save money if
-your work can tolerate being interrupted (also known as a preemptible compute resource). In this case,
-you pay less per hour with the understanding that your work may be interrupted by a customer willing to pay more.
-For more information including current compute pricing see, [Google Cloud 
-Compute Pricing](https://cloud.google.com/compute/all-pricing#top_of_page).
+As an overview, Google Cloud Platform charges for:
 
-### Storage
-Cost for storage is driven by the amount of data you store, and the length of time you wish to store the data. Here, you can save money if you have data that you do not plan to access frequently. This would be the case for raw data that has already been processed, backups, and archives.
-For more information and current pricing see [Google Cloud Storage Pricing](https://cloud.google.com/storage/pricing#storage-pricing) 
-and [Google Cloud Local SSD Pricing](https://cloud.google.com/compute/all-pricing#localssdpricing).
+1. Storing data in Google Storage.
+1. Downloading data from Google Storage  (egress).
+1. **Computing** - Compute cost is driven by CPU and memory requirements. See [Standard Machine Types](https://cloud.google.com/compute/all-pricing#n1_standard_machine_types) for more information.
+1. Persistent disk allocated for any machines that are running or idle.
+1. Data transfer between cloud regions.
 
-### Network Usage (Egress)
-Egress applies to data being transferred out of a Cloud resource. In this context, a Cloud resource
-refers to a set of computers in a particular region. This would apply, for example, if you transferred data from Google’s East Coast computers to Amazon’s West Coast computers.
 
-In general, while it’s free to upload data to the Cloud, you will incur costs when downloading data to your local computer or between Cloud regions.
-For more information see [Google Cloud Network Pricing](https://cloud.google.
-com/storage/pricing#network-egress).
+
+Costs for Storage is driven by the amount of data and the length of time to store the data.
+https://cloud.google.com/compute/all-pricing#localssdpricing
+https://cloud.google.com/storage/pricing#storage-pricing
+
+Costs for Egress is driven by the amout of data being transferred out of a Cloud resource.
+https://cloud.google.com/storage/pricing#network-egress
+
+
+For more information and a broader overview of cloud costs, see [Understanding Cloud Costs](/learn/understanding-cloud-costs).
+
+
 
 
 ## Estimating your Costs
-To estimate your costs, use the [AnVIL Cost Estimator](https://docs.google.com/spreadsheets/d/1GUN93HDRqDbZ0uktaZjoP-y8Ril1T_VIJnQrjRD6tV4) Google Sheet to calculate costs for computing, storage and network usage (egress) for your proposal.
+To estimate your costs, use the [AnVIL Cost Estimator](https://docs.google.com/spreadsheets/d/1GUN93HDRqDbZ0uktaZjoP-y8Ril1T_VIJnQrjRD6tV4) Google Sheet to calculate costs for computing, storage, and network usage (egress) for your proposal.
 
 
 ## Preparing a Budget Justification
-To prepare a budget justification you can use the template Google Doc [AnVIL 
-Budget Justification](https://docs.google.com/document/d/145JFLn2hviLmaYF-mO06gbCkG0i4HRaWvkUBKORo85Y) as a guide to create a budget justification paragraph 
-for your proposal by including the information highlighted in pink (mostly 
+To prepare a budget justification you can use the template Google Doc [AnVIL
+Budget Justification](https://docs.google.com/document/d/145JFLn2hviLmaYF-mO06gbCkG0i4HRaWvkUBKORo85Y) as a guide to creating a budget justification paragraph
+for your proposal by including the information highlighted in pink (mostly
 copying entries from your AnVIL Cost Estimator Google Sheet).
 
-For further guidance, you can have a look at a completed document [AnVIL 
-Budget Justification Example](https://docs.google.com/document/d/1qMZNvZig7vNXposBxA77AIASY0gDCwaYwGl2YwzHXuY). 
-
-Be sure to check that the prices are up to date by using the links listed below 
+Be sure to check that the prices are up to date by using the links listed below
 or in the AnVIL Cost Estimator.
+
+### Budget Justification Example Text
+
+An example budget justification is given below. For a Google Doc version of the example see [AnVIL
+Budget Justification Example](https://docs.google.com/document/d/1qMZNvZig7vNXposBxA77AIASY0gDCwaYwGl2YwzHXuY).
+
+#### Example
+
+**AnVIL Data Storage** - We anticipate collecting and storing genotype data on between 100,000 individuals representing a maximum of 10 TB of storage. These data will be stored on the AnVIL system for distribution and analysis through the AnVIL projects consortium data management. These data are hosted on Google Cloud Platform and their storage will be governed under consortia data storage agreements arranged through the NHGRI and will not be charged to this grant.
+
+**AnVIL Temporary Data Storage** - We anticipate that up to 4 TB of intermediate processed files, results, figures, and analysis products will be stored at any given time. Based on current Google Cloud Storage Pricing for single region storage (accessed 12/01/2020) the cost for this storage will be $81.92 per month for a total of $983.04 per year in storage costs.
+
+**AnVIL Batch Processing Costs** - The AnVIL supports batch workflows of genetic and genomic data. To support this activity we are budgeting committed usage of one n1-standard-4 instance consisting of 4 vCPUs and 15 GB of RAM with 375 GB of attached SSD storage for the entire year. Based on current Google Cloud Compute Pricing (accessed 12/01/2020) the cost for this interactive computing will be $127.09 per month for a total of $1,525.08 per year in compute costs.
+
+**AnVIL Interactive Analysis Costs** -  The AnVIL supports interactive analysis of genetic and genomic data. We are budgeting the equivalent of one analyst working full time (5 days a week, 8 hours a day) on interactive analysis. To support this activity we estimate 174 hours of compute time per month on n1-standard-8 instances consisting of 8 vCPUs and 30 GB of RAM with 375 GB of attached SSD storage. Based on current Google Cloud Compute Pricing (accessed 12/01/2020) the cost for this interactive computing will be $96.12 per month for a total of $1,153.44 per year in compute costs.
+
+**AnVIL Egress Fees** - The AnVIL is hosted on Google Cloud Platform and we anticipate that some of the intermediate data files and summary statistics will require egress each year to local compute infrastructure. We anticipate up to 2 TB in data egress per year for the proposal. This may include both within network egress for analysis purposes and out of Google Cloud Platform egress for researchers to perform analysis on their own systems. Based on current Google Cloud Compute Pricing (accessed 12/01/2020) the cost for egress will be $2,826.24 per year.
+
+**Contingency Storage/Compute** -  Estimates for cloud computing costs are based on current market prices, AnVIL infrastructure under the current configuration, and ongoing support from the NHGRI. We are budgeting a further $10,000 per year in contingency costs should we need to store the data on a secondary platform and in anticipation of additional compute needs for the project.
+
+
+
 
 
