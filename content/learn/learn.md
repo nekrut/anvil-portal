@@ -1,11 +1,10 @@
 ---
-title: "Learning AnVIL"
+title: Getting Started with AnVIL"
 author: "AnVIL"
-description: "An overview of the AnVIL platform documentation and getting
-started content."
+description: "A guided walk-through of the  AnVIL / Terra documentation with a focus on onboarding and preparing new users to run genomic analyses in the cloud."
 ---
 
-# Learning AnVIL
+# Getting Started with AnVIL
 
   <!--- Add links! --->
 
@@ -26,9 +25,9 @@ The AnVIL team is in the process of developing persona-specific guides and tutor
 
   <!--- Add FAIR, add interoperability with other data commons, increased accessibility to complex data center--->
 
-## Getting Started
+## New User Onboarding Guide
 
-The following is a guided walk through of the  AnVIL / Terra documentation with a focus  on onboarding and preparing new users to run genomic analyses in the cloud.
+The following is a guided walk-through of the  AnVIL / Terra documentation with a focus on onboarding and preparing new users to run genomic analyses in the cloud.
 
 This section covers:
 
@@ -41,7 +40,7 @@ This section covers:
 
 All you need is a Google account to register with Terra and browse AnVIL’s publicly accessible workspaces.
 
-Likewise, with a Google account, you  can register with Gen3 and browse publicly accessible datasets or register with Dockstore and browse tools and workflows.
+Likewise, with a Google account, you can register with Gen3 and browse publicly accessible datasets or register with Dockstore and browse tools and workflows.
 
 To send artificial cohorts from Gen3 to Terra, you will need to link your Gen3 and Terra accounts.
 
@@ -57,9 +56,9 @@ AnVIL holds genomic data for hundreds of thousands of study participants. Much o
 To obtain access to controlled-access data sets, you must either be a member of a data-generating consortia with a data-sharing agreement among consortia members or have been granted access to a study through the dbGapP Data Access Request process.
 
 
-Once you have been granted access, and assuming you have linked your eRA commons ID with Terra and Gen3, you will be able to see your new studies in Gen3 and new data oriented workspaces in Terra.
+Once you have been granted access, and assuming you have linked your eRA commons ID with Terra and Gen3, you will be able to see your new studies in Gen3 and new data-oriented workspaces in Terra.
 
-AnVIL’s open access datasets such as [1000 Genomes High Coverage 2019](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019) can be accessed in Terra or Gen3 immediately after account creation.
+AnVIL’s open-access datasets such as [1000 Genomes High Coverage 2019](https://anvil.terra.bio/#workspaces/anvil-datastorage/1000G-high-coverage-2019) can be accessed in Terra or Gen3 immediately after account creation.
 
 For a detailed listing of available datasets searchable by disease, data type, consent type and consortia, see AnVIL’s  [Dataset Catalog](/data).
 
@@ -89,29 +88,41 @@ Workspaces come in several general types or flavors:
 
 Analysis Oriented Workspaces
 
+TODO:
 Featured Workspaces
+
+TODO:
 
 
 ### Workspace Permissions
 
+
+TODO:
+
 ### Using Workspaces
 
+
+TODO:
+
 ### Workspaces and Billing
+
+
+TODO:
 
 AnVIL and all of its components are free to use, however, as  Terra runs on the Google Cloud Platform (GCP), certain workspace activities, such as running an analysis,  storing analysis results, or downloading data may incur Google Cloud Platform (GCP) fees.
 
 
 When a workspace is created either from scratch or by cloning another workspace, the workspace is linked to a Terra Billing Project.
 
-Terra Billing Projects  are in turn,  linked with a single Google Cloud Billing Account. Through this mechanism, the costs associated with the workspace are passed through to the specified Google Cloud Billing Account.
+Terra Billing Projects are in turn,  linked with a single Google Cloud Billing Account. Through this mechanism, the costs associated with the workspace are passed through to the specified Google Cloud Billing Account.
 
 Performing the following workspace activities will incur costs on GCP that will be passed through to the workspace’s Terra Billing Project’s Google Cloud Billing Account:
 
-1. Uploading data to the workspace  bucket - the upload network transfer or ingress is free however there will be a CGP fee for storing the data in the bucket over time.
+1. Uploading data to the workspace bucket - the upload network transfer or ingress is free however there will be a CGP fee for storing the data in the bucket over time.
 
 1. Writing a Jupyter Notebook  - Notebooks are stored in the workspaces bucket. Uploading the notebook is free. There will be storage charges for the notebook.
 
-1. “Launching a Cloud Environment” - This term is used to indicate the  launching  of a single machine or cluster to run a notebook or workflow. The charges will depend on the type of machine and number of processors selected as well as any disk or ram space used. This is also referred to as “Launching a Workspace”
+1. “Launching a Cloud Environment” - This term is used to indicate the  launching of a single machine or cluster to run a notebook or workflow. The charges will depend on the type of machine and number of processors selected as well as any disk or ram space used. This is also referred to as “Launching a Workspace”
 
 
 1. Storage for persistent disk associated with any paused cloud environments.
