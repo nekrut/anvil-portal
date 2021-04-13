@@ -1,5 +1,7 @@
 # Guides and Tutorials
 
+Key guides and tutorials grouped by user persona are listed below. For an overview of the platform see [Overview of the Anvil Platform](/overview). For a general onboarding and getting started tour, see the [Learn](/Learn) section. See [Getting Help with AnVIL Tools and Components](/help) to obtain personalized help for each of AnVIL's components and tools.
+
 ### General
 
 [Getting Started](/learn#getting-started) - An overview of AnVIL with a focus on onboarding and preparing new users to run genomic analyses in the cloud.

@@ -196,8 +196,8 @@
           file: ""
           pathPartial: "/getting-started"
           navigationItems:
-#            - name: "Getting Started with Terra"
-#              file: "/learn/getting-started/getting-started-with-terra"
+            - name: "Getting Started with Terra"
+              file: "/learn/getting-started/getting-started-with-terra"
             - name: "Using Example Workspaces"
               file: "/learn/getting-started/using-example-workspaces"
             - name: "Getting Started with Galaxy in Terra"
