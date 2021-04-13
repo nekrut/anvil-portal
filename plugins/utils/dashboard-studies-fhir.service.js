@@ -19,6 +19,7 @@ const FHIR_FIELD_KEY = {
     "CONSENT_CODES": "consentCodes",
     "DATA_TYPES": "dataTypes",
     "DISEASES": "diseases",
+    "MESH_CODES": "meshCodes",
     "STUDY_NAME": "studyName",
     "SUBJECTS_TOTAL": "subjectsTotal"
 };
@@ -96,6 +97,9 @@ function buildFHIRStudy(fhirJSON, study) {
             /* Roll up the diseases. */
             const diseases = rollUpDiseases(resource, acc);
 
+            /* Roll up the mesh codes. */
+            const meshCodes = rollUpMeshCodes(resource, acc);
+
             /* Roll up subjects total. */
             const subjectsTotal = rollUpSubjectsTotal(resource, acc);
 
@@ -104,6 +108,7 @@ function buildFHIRStudy(fhirJSON, study) {
                 [FHIR_FIELD_KEY.CONSENT_CODES]: consentCodes,
                 [FHIR_FIELD_KEY.DATA_TYPES]: dataTypes,
                 [FHIR_FIELD_KEY.DISEASES]: diseases,
+                [FHIR_FIELD_KEY.MESH_CODES]: meshCodes,
                 [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: subjectsTotal
             });
         }, cloneStudy);
@@ -266,6 +271,7 @@ function initializeStudy() {
         [FHIR_FIELD_KEY.CONSENT_CODES]: [],
         [FHIR_FIELD_KEY.DATA_TYPES]: [],
         [FHIR_FIELD_KEY.DISEASES]: [],
+        [FHIR_FIELD_KEY.MESH_CODES]: [],
         [FHIR_FIELD_KEY.STUDY_NAME]: "",
         [FHIR_FIELD_KEY.SUBJECTS_TOTAL]: 0
     };
@@ -447,6 +453,50 @@ function rollUpDiseases(resource, acc) {
     }
 
     return diseases;
+}
+
+/**
+ * Returns the mesh codes, rolled up from focus field's code field.
+ *
+ * @param resource
+ * @param acc
+ * @returns {*}
+ */
+function rollUpMeshCodes(resource, acc) {
+
+    /* Grab any accumulated diseases. */
+    const meshCodes = acc[FHIR_FIELD_KEY.MESH_CODES];
+
+    if ( resource ) {
+
+        /* Grab the focus array. */
+        const focuses = resource.focus;
+
+        if ( focuses ) {
+
+            return focuses.reduce((acc, focus) => {
+
+                const {coding} = focus || {};
+
+                if ( coding ) {
+
+                    coding.forEach(node => {
+
+                        const {code} = node || {};
+
+                        if ( code ) {
+
+                            acc.push(code);
+                        }
+                    })
+                }
+
+                return acc;
+            }, meshCodes)
+        }
+    }
+
+    return meshCodes;
 }
 
 /**

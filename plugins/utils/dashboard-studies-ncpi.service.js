@@ -111,6 +111,7 @@ async function buildDashboardStudy(gapIdPlatform) {
     const dataTypes = study.dataTypes;
     const diseases = study.diseases;
     const gapId = buildGapId(dbGapIdAccession, studyUrl);
+    const meshCodes = study.meshCodes;
     const studyPlatform = getStudyPlatform(platforms);
     const studyPlatforms = platforms;
     const studyName = study.studyName;
@@ -122,6 +123,7 @@ async function buildDashboardStudy(gapIdPlatform) {
         dbGapIdAccession: dbGapIdAccession,
         diseases: diseases,
         gapId: gapId,
+        meshCodes: meshCodes,
         platform: studyPlatform,
         platforms: studyPlatforms,
         studyName: studyName,

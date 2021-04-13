@@ -24,7 +24,7 @@ const dashboardIndexFileName = "/dashboard-index-ncpi.json";
 const lunrIndexRefField = "dbGapIdAccession";
 const searchFacets = ["platforms", "diseases", "dataTypes", "consentCodes"]; // NCPI facets (selected from NCPI study property values) for the dashboard checkboxes.
 const summaryKey = "platforms";
-const tableHeadersEntities = ["platforms", "gapId", "studyName", "diseases", "dataTypes", "consentCodes", "subjectsTotal"];
+const tableHeadersEntities = ["platforms", "gapId", "studyName", "diseases", "meshCodes", "dataTypes", "consentCodes", "subjectsTotal"];
 const tableHeadersSummary = ["platforms", "studies", "subjectsTotal"];
 
 function DashboardNCPI() {

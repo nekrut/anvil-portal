@@ -53,6 +53,7 @@ exports.createSchemaCustomization = ({actions}) => {
         dbGapIdAccession: String!
         diseases: [String]
         gapId: GapId
+        meshCodes: [String]
         platform: String
         platforms: [String]
         studyName: String

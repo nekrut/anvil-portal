@@ -210,6 +210,8 @@ export function switchDisplayColumnName(columnName) {
             return "dbGap Id";
         case "gapId":
             return "dbGap Id";
+        case "meshCodes":
+            return "Mesh Codes";
         case "platforms":
             return "Platform";
         case "projectId":

@@ -15,6 +15,7 @@ export const DashboardNCPIStaticQuery = () => {
                   studyUrl
                   gapIdDisplay
                 }
+                meshCodes
                 platform
                 platforms
                 studyName
