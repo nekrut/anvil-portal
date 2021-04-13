@@ -4,7 +4,7 @@ author: "AnVIL"
 description: "An overview of how cloud billing for Terra in AnVIL."
 ---
 
-# Billing Setup
+# Setting Up  Billing
 
   <!--- Add  requestor pays.--->
 

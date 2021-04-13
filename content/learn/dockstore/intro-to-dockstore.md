@@ -5,6 +5,6 @@ description: "All about finding genomic analysis workflows in Dockstore and expo
 ---
 
 
-# Getting Started with Dockstore
+# Intro to Dockstore
 
-In AnVIL Dockstore is used as a repository for....
+In AnVIL, Dockstore ...
